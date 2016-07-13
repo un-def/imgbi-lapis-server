@@ -1,0 +1,6 @@
+config.lua
+static/
+*.conf.compiled
+*_temp/
+logs/
+uploads/
