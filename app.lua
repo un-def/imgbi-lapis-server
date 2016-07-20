@@ -15,6 +15,14 @@ local api = Api(app, config.api_entry_point)
 
 api:route('upload', '/upload', {
   POST = function(self)
+    local host = self.req.parsed_url.host
+    if host:match('%.onion$') or host:match('%.i2p$') then
+      assert_err(utils.check_hidden_limit(), errors.hidden_limit, 403)
+    else
+      local ip = assert_err(utils.get_client_ip(self), errors.server_error)
+      assert_err(utils.check_ip_limit(ip), errors.ip_limit, 403)
+    end
+
     local post = self.req.params_post
     local expire = post.expire
 

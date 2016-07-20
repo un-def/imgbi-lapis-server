@@ -157,6 +157,16 @@ local function get_client_ip(request)
 end
 
 
+local function check_ip_limit(ip)
+  return true
+end
+
+
+local function check_hidden_limit()
+  return true
+end
+
+
 return {
   is_uppercase = is_uppercase,
   is_alphanumeric = is_alphanumeric,
@@ -174,4 +184,6 @@ return {
   delete_id = delete_id,
   check_password = check_password,
   get_client_ip = get_client_ip,
+  check_ip_limit = check_ip_limit,
+  check_hidden_limit = check_hidden_limit,
 }

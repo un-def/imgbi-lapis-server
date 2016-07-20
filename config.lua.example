@@ -6,6 +6,8 @@ config({'development', 'production'}, {
   upload_images_dir = '/path/to/uploads',
   upload_thumbs_dir = '/path/to/uploads/thumbs',
   hashids = 'img.bi',
+  ip_limit = 100,
+  hidden_limit = 2000,
   -- please pay attention to leading/trailing slashes; example: /api/v2
   api_entry_point = '/api',
 })

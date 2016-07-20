@@ -10,4 +10,6 @@ return {
   no_file = 'noFile',
   invalid_password = 'invalidPassword',
   failed_to_remove = 'failedToRemove',
+  ip_limit = 'ipLimit',
+  hidden_limit = 'hiddenLimit',
 }
