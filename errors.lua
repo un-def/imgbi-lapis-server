@@ -1,4 +1,5 @@
 return {
+  server_error = 'serverError',
   invalid_expire = 'invalidExpire',
   invalid_encrypted = 'invalidEncrypted',
   invalid_thumb = 'invalidThumb',

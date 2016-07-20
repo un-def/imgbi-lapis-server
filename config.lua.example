@@ -25,4 +25,7 @@ config('production', {
   port = 80,
   num_workers = 4,
   code_cache = 'on',
+  -- set this header if app is running behind reverse proxy
+  -- to use header value instead of ngx.var.remote_addr
+  client_ip_header = 'X-Real-IP',
 })

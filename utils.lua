@@ -149,6 +149,14 @@ local function check_password(password, hash)
 end
 
 
+local function get_client_ip(request)
+  if config.client_ip_header then
+    return request.req.headers[config.client_ip_header]
+  end
+    return ngx.var.remote_addr
+end
+
+
 return {
   is_uppercase = is_uppercase,
   is_alphanumeric = is_alphanumeric,
@@ -165,4 +173,5 @@ return {
   retrieve_hash = retrieve_hash,
   delete_id = delete_id,
   check_password = check_password,
+  get_client_ip = get_client_ip,
 }
